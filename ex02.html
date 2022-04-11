@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Aula 02 de Lógica - Impulso Tec</title>
+    <title>EX2 - DESAFIO 01</title>
     <meta charset="utf-08">
     <style>
         * {
@@ -52,36 +52,38 @@
 </head>
 
 <body>
-    <p><strong>Aula 2</strong> <br> Bem vindo a aula de Lógica com JavaScript.</p>
+    <p>Impar ou Par 3x - ex02</p>
     <br>
     <p>Observe o Console do Navegador</p>
-    <input type="button" value="Atualizar" onclick="window.location.reload()">
+    <input type="button" value="Atualizar">
 </body>
 <script>
-    console.log("Hello World")
-    var numero = 7
-    if (numero % 2 == 0){
-        console.log("O número " + numero + " é PAR")
+    var numero = 6
+    var acumulador = 0
+
+    acumulador = acumulador + numero
+    if (acumulador % 2 == 0){
+        console.log("O número " + acumulador + " é PAR")
+        acumulador += numero
     } else{
-        console.log("O número " + numero + " é IMPAR")
+        console.log("O número " + acumulador + " é IMPAR")
+        acumulador += numero
+    } if (acumulador % 2 == 0){
+        console.log("O número " + acumulador + " é PAR")
+        acumulador += numero
+    }   
+    else{
+        console.log("O número " + acumulador + " é IMPAR")
+        acumulador += numero
+    } if (acumulador % 2 == 0){
+        console.log("O número " + acumulador + " é PAR")
+        acumulador += numero
+    } else{
+        console.log("O número " + acumulador + " é IMPAR")
+        acumulador += numero
     }
 
-    // ++++++++++++++++++++++++++
-    var animais = ["Elefante", "Onça", "Pinguim","Baleia", "Gavião"] // length - Comprimento - Quantidade de elementos
-    console.log(animais)
-    console.log(animais.length) // 5
-    console.log(animais[2]) // Pinguim
 
-    var mensagem = animais[0] + " e " + animais[1] + " São animais terrestres"
-    console.log(mensagem)
-
-    console.log("+++++++++++++++++")
-
-    var n = 0
-    while(n < animais.length){
-        console.log(animais[n])
-        n++
-    }
 
 </script>
 </html>
