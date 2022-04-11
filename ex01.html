@@ -55,14 +55,16 @@
 <body>
     <h1>LIVRARIA</h1>
     <p>Digite o nome do livro que deseja conferir:<br>
-        <input type="text" placeholder="Digite nome que deseja Conferir"><br>
+        <input type="text" placeholder="Dica: O Demonologista"><br>
         <input type="button" id="botao" value="Conferir"></p>
 </body>
 <script>
-    var tituloLivro = "O Demonologista"
-    var promocao = true
+    var tituloLivro = "O Demonologista" // String
+    var promocao = true // Boolean
     if (promocao){
         alert(tituloLivro)
+       // alert(typeof(tituloLivro)) //String
+       // alert(tituloLivro == "O Demonologista") // true
     } // se sim
     else {
         alert("Promoção Encerrada")
