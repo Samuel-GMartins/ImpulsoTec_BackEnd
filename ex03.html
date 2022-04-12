@@ -58,9 +58,33 @@
     <input type="button" value="Atualizar" onclick="window.location.reload()">
 </body>
 <script>
-//               0       1       2       3         4
-var animais =["Veado","Bode","Pinguim","Baleia","Gavião"]
-
-
+//                   0       1       2       3         4
+    var animais =["Veado","Bode","Pinguim","Baleia","Gavião"]
+    if(animais[0] && animais[1]){
+        console.log(animais[0] + " e " + animais[1] + " São animais Silvestres")
+    }
+    if(animais[2] && animais[3]){
+    console.log(animais[2] + " e " + animais[3] + " São animais Marinhos")
+    }
+    if(animais[4]){
+        console.log(animais[4] + " É o excluido!")
+    }
+    // +++++++++++++++++++++++++++++
+    // UTILIZANDO WHILE
+   
+    /*
+    posicao = 0
+    while(posicao < animais.length) // LENGTH QTD DE ITENS != POSIÇÃO
+    // Enquanto minha posição <= ao tamanho total do meu array [4] repita 
+    {
+    if(animais[posicao] == "Veado" || animais[posicao] == "Bode"){
+        console.log(animais[posicao] + " é animal Terrestre")
+    }
+    if(animais[posicao] == "Pinguim" || animais[posicao] == "Baleia"){
+        console.log(animais[posicao] + " é  animal Marinho")
+    }
+    posicao++; // Serve para aumentar o contador, saindo do 0 e não fazer um looping infinito 
+    }
+     */
 </script>
 </html>
