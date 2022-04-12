@@ -55,33 +55,74 @@
     <p>Impar ou Par 3x - ex02</p>
     <br>
     <p>Observe o Console do Navegador</p>
-    <input type="button" value="Atualizar">
+    <input type="button" value="Atualizar" onclick="window.location.reload()">
 </body>
 <script>
-    var numero = 6
-    var acumulador = 0
+    // var acumulador, numero
+    // acumulador = 0
+    // // 1° vez
+    // numero = 5
+    // if (numero % 2 == 0){
+    //     console.log("O número " + numero + " é PAR")
+    // } 
+    // else{
+    //     console.log("O número " + numero + " é IMPAR")
+    // }
+    // acumulador = acumulador + numero
 
-    acumulador = acumulador + numero
-    if (acumulador % 2 == 0){
-        console.log("O número " + acumulador + " é PAR")
-        acumulador += numero
-    } else{
-        console.log("O número " + acumulador + " é IMPAR")
-        acumulador += numero
-    } if (acumulador % 2 == 0){
-        console.log("O número " + acumulador + " é PAR")
-        acumulador += numero
-    }   
-    else{
-        console.log("O número " + acumulador + " é IMPAR")
-        acumulador += numero
-    } if (acumulador % 2 == 0){
-        console.log("O número " + acumulador + " é PAR")
-        acumulador += numero
-    } else{
-        console.log("O número " + acumulador + " é IMPAR")
-        acumulador += numero
+    //  // 2° vez
+    // numero = 10
+    // if (numero % 2 == 0){
+    //     console.log("O número " + numero + " é PAR")
+    // } 
+    // else{
+    //     console.log("O número " + numero + " é IMPAR")
+    //     }
+    // acumulador = acumulador + numero
+
+    // // 3° vez
+    // numero = 20
+    // if (numero % 2 == 0){
+    //     console.log("O número " + numero + " é PAR")
+    // } 
+    // else{
+    //     console.log("O número " + numero + " é IMPAR")
+    // }
+    // acumulador = acumulador + numero
+
+    // // Verifica se acumulador é PAR ou IMPAR
+    // if (numero % 2 == 0){
+    //     console.log("O número Acumulado " + acumulador + " é PAR")
+    // } 
+    // else{
+    //     console.log("O número acumulado " + acumulador + " é IMPAR")
+    // }
+    // acumulador = acumulador + numero
+
+    //+++++++++++++++++++++++++++++++++++++++
+    // DESENVOLVER O CODIGO EM LAÇO/ REPETIÇÃO
+    var numero, acumulador, n
+    acumulador = 0
+    n = 0
+    numero = 6
+    while (n < 3) {
+        if (numero % 2 == 0) {
+            console.log("O número  " + numero + " é PAR")
+        }
+        else {
+            console.log("O número  " + numero + " é IMPAR")
+        }
+
+        acumulador = acumulador + numero
+        numero = numero + 7
+        n++
     }
-
+    if (acumulador % 2 == 0) {
+        console.log("O número Acumulado " + acumulador + " é PAR")
+    }
+    else {
+        console.log("O número acumulado " + acumulador + " é IMPAR")
+    } 
 </script>
+
 </html>
