@@ -10,15 +10,16 @@
         }
 
         body {
-            background-color: rgba(139, 244, 244, 0.4);
+            background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
             size: 500px;
             padding: 50px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
 
-        h1 {
+        h1, h3 {
             margin-bottom: 10px;
+            color: white;
         }
 
         p {
@@ -26,7 +27,8 @@
             background-color: white;
             border-radius: 20px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.724);
-            font-size: 20pt;
+            font-size: 15pt;
+            text-align: justify;
         }
 
         p:hover {
@@ -35,6 +37,7 @@
 
         input {
             padding: 10px;
+            margin-bottom: 20px;
             margin-top: 20px;
             padding-inline: 70px;
             border-radius: 15px;
@@ -52,10 +55,18 @@
 </head>
 
 <body>
-    <p>Impar ou Par 3x - ex02</p>
-    <br>
-    <p>Observe o Console do Navegador</p>
+    <h1> Ex 002 - Desafio 1</h1>
+    <h3>Observe o Console do Navegador</h3>
     <input type="button" value="Atualizar" onclick="window.location.reload()">
+    <p> &bull; Criar uma Var chamada <strong>acumulador</strong> <br>
+        &bull; Criar uma 2° Var chamada <strong>numero</strong> <br>
+        &bull; Crie um codigo que executa a verificação de par ou impar
+        <strong>3 vezes</strong> <br>
+        &bull; (Antes de cada verificação, altere o valor da variavel numero)
+        <br>
+        &bull; Acumule o valor de numero atribuindo para a variável acumulador <br>
+        &bull; Execute um codigo que verifique se acumulador  é <strong>IMPAR</strong> ou <strong>PAR</strong>
+    </p>
 </body>
 <script>
     // var acumulador, numero

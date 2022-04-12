@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>EX2 - DESAFIO 01</title>
+    <title>EX3 - DESAFIO 02</title>
     <meta charset="utf-08">
     <style>
         * {
@@ -10,15 +10,17 @@
         }
 
         body {
-            background-color: rgba(139, 244, 244, 0.4);
+            background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
             size: 500px;
             padding: 50px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
 
-        h1 {
+        h1,
+        h3 {
             margin-bottom: 10px;
+            color: white;
         }
 
         p {
@@ -26,15 +28,20 @@
             background-color: white;
             border-radius: 20px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.724);
-            font-size: 20pt;
+            font-size: 15pt;
+            text-align: justify;
+            filter: blur(1px);
         }
 
         p:hover {
-            background-color: rgb(237, 236, 236);
+            background-color: rgb(255, 255, 255);
+            filter: none;
+
         }
 
         input {
             padding: 10px;
+            margin-bottom: 20px;
             margin-top: 20px;
             padding-inline: 70px;
             border-radius: 15px;
@@ -52,26 +59,33 @@
 </head>
 
 <body>
-    <p>Ex 003 - Desafio 2</p>
-    <br>
-    <p>Observe o Console do Navegador</p>
+    <h1> Ex 003 - Desafio 2</h1>
+    <h3> <i>Observe o Console do Navegador</i></h3>
     <input type="button" value="Atualizar" onclick="window.location.reload()">
+    <p> &bull; Criar uma var do tipo <strong> Array</strong> chamada <strong>animais</strong>, com 5 itens
+        Onde 2 deles são animais terrestres e outros 2 são marinhos
+        <br><br>
+        &bull; Crie um codigo que consome o array animais e utiliza <strong>if</strong> e <strong>else</strong> para
+        verificar quais animais são terrestres e quais são marinhos, exibindo uma mensagem no console
+    </p>
 </body>
 <script>
-    //                   0       1       2       3         4
+    //                0       1         2          3        4
     var animais = ["Veado", "Bode", "Pinguim", "Baleia", "Gavião"]
-    // if(animais[0] && animais[1]){
-    //     console.log(animais[0] + " e " + animais[1] + " São animais Silvestres")
-    // }
-    // if(animais[2] && animais[3]){
-    // console.log(animais[2] + " e " + animais[3] + " São animais Marinhos")
-    // }
-    // if(animais[4]){
-    //     console.log(animais[4] + " É o excluido!")
-    // }
-    // +++++++++++++++++++++++++++++
-    // UTILIZANDO WHILE
+    if(animais[0] && animais[1]){
+        console.log(animais[0] + " e " + animais[1] + " São animais Silvestres")
+    }
+    if(animais[2] && animais[3]){
+    console.log(animais[2] + " e " + animais[3] + " São animais Marinhos")
+    }
+    if(animais[4]){
+        console.log(animais[4] + " É o excluido!")
+    }
 
+
+    // ============================
+    console.log("+++++++-------+++++++")
+    //UTILIZANDO WHILE
     posicao = 0
     while (posicao < animais.length) { // LENGTH QTD DE ITENS != POSIÇÃO
         // Enquanto minha posição <= ao tamanho total do meu array [4] repita 
@@ -80,9 +94,36 @@
 
         animais[posicao] == "Veado" || animais[posicao] == "Bode" ? console.log(msgTerrestre) : null // else NULO
         animais[posicao] == "Pinguim" || animais[posicao] == "Baleia" ? console.log(msgMarinho) : null // else NULO
-    //TERNÁRI// A condição é verdadeira ? -  Executa o bloco depois do ? Se não, executa o bloco depois  do :
+        //TERNÁRIO // A condição é verdadeira ? -  Executa o bloco depois do ? Se não, executa o bloco depois  do :
         posicao++ // Aumenta o contador, saindo do 0 e não fazer um looping infinito 
     }
+
+    // ============================
+    console.log("+++++++-------+++++++")
+    //MODELO 2 PARA CATEGORIAS DE ANIMAIS
+    // t = Terrestre    m = Marinho     a = Ave
+    var especies = [
+        //  0      1
+        ["Veado", "t"],     // 0
+        ["Bode", "t"],      // 1
+        ["Baleia", "m"],    // 2
+        ["Pinguim", "m"],   // 3
+        ["Gavião", "a"]     // 4
+    ]
+    var x = 0
+
+    while (x < especies.length) {
+        //console.log(especies[x][0])
+        especies[x][1] == "m" ? console.log(especies[x][0] + ": Animais Marinhos") : null
+
+        especies[x][1] == "t" ? console.log(especies[x][0] + ": Animais Terrestres") : null
+
+        especies[x][1] == "a" ? console.log(especies[x][0] + ": Animais Esvoaçantes") : null
+
+        x++
+
+    }
+
 </script>
 
 </html>
