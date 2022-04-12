@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>Aula 03 de Logica - Impulso Tec</title>
+    <meta charset="utf-08">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgba(139, 244, 244, 0.4);
+            size: 500px;
+            padding: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            padding: 50px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.724);
+            font-size: 20pt;
+        }
+
+        p:hover {
+            background-color: rgb(237, 236, 236);
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 20px;
+            padding-inline: 70px;
+            border-radius: 15px;
+            font-size: 15pt;
+            border: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.516);
+        }
+
+        input:hover {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.475);
+            background-color: rgb(182, 182, 182);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><strong>Aula 3</strong></h1>
+    <h3>Bem vindo a aula de Logica com JavaScript</h3>
+    <p>Observe o Console do Navegador</p>
+    <input type="button" value="Atualizar" onclick="window.location.reload()">
+</body>
+<script>
+    // ============================
+    //console.log("+++++++-------+++++++")
+
+    //Função Simples
+    var diaDaSemana = "Terça"
+    function saudacao() {
+        console.log("Seja Bem Vindo!")
+        console.log("Hoje é " + diaDaSemana)
+    }
+    saudacao() //Chamada Da Função
+
+    console.log("+++++++-------+++++++")
+
+    // Funções com Retorno
+    function soma(){
+        return 10+2
+    }
+    var res = soma()
+    console.log(res)
+
+
+</script>
+
+</html>
