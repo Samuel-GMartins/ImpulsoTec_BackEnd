@@ -78,93 +78,137 @@
     </p>
 </body>
 <script>
-   var escola,primeiroAno,segundoAno,terceiroAno,turmaA,turmaB,turmaC
-//    //   0    1  2      3 
-//    //PRIMEIRO ANO
- escola =
- [  primeiroAno = [
-        turmaA = [  //0
-        ["Aluno1a1",5],
-        ["Aluno2a1",1],
-        ["Aluno3a1",3], 
-        ["Aluno4a1",4],
-        ["Aluno5a1",1],
-        ],
-        turmaB = [  //1
-        ["Aluno6b1",2],  
-        ["Aluno7b1",1],  
-        ["Aluno8b1",1],    
-        ["Aluno9b1",4],  
-        ["Aluno10b1",2],
 
-        ],
-        turmaC = [  //2
-        ["Aluno11c1",3],
-        ["Aluno12c1",4],
-        ["Aluno13c1",4],
-        ["Aluno14c1",4],
-        ["Aluno15c1",1],
+    var escola = [
+        [//         0-------------1----------------2------------3----------4        //Primeira Série
+            //     0------1       0------1       0-------1      0----1      0----1     
+            [["Alan", 3], ["Debora", 2], ["Jailson", 5], ["Ane", 4], ["Joe", 3]],  // 0  Turma 1A   
+
+            //     0------------1-------------2--------------3--------------4 
+            //   0-----1       0-----1      0------1      0-------1      0----1     
+            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5]],  // 1  Turma 1B   
+
+            //     0------------1----------------2-------------3------------4       
+            //    0----1        0-----1        0-----1      0----1      0----1     
+            [["Silas", 5], ["Dráusio", 5], ["Beatriz", 4], ["Ire", 4], ["Tania", 3]]  // 2  Turma 1C   
         ]
+    ]
 
-    ],
-    segundoAno = [ //01
-        turmaA = [  //0
-        ["Aluno16a2",1],
-        ["Aluno17a2",1],
-        ["Aluno18a2",3],
-        ["Aluno19a2",2],
-        ["Aluno20a2",1],
-        ],
-        turmaB = [  //1
-        ["Aluno21b1",2],  
-        ["Aluno22b1",1],  
-        ["Aluno23b1",1],    
-        ["Aluno24b1",3],  
-        ["Aluno25b1",2],
+    // escola [0] Série,     escola [0][0] turma       escola [0][0][0] Aluno      escola [0][0][0][0] Nota Aluno
+    // [Primeiro Colchete(Primeira Série)] [Segundo Colchete(Turma A)] [Informações do Aluno] [Nota do Aluno]
+    // console.log(escola[0][2][1][1]) // Serie,TURMAS, Aluno, Nota
 
-        ],
-        turmaC = [  //2
-        ["Aluno26c2",1],
-        ["Aluno27c2",1],
-        ["Aluno28c2",2],
-        ["Aluno29c2",1],
-        ["Aluno30c2",3],
-        ]
+    console.log(escola[0][1][2][0])
+    console.log(escola[0][1][2][1])
+    console.log("+++++++-------+++++++")
 
-    ],
+    var x = 0
+    var y = 0
 
-    terceiroAno = [ //02
-        turmaA = [  //0
-        ["Aluno31a3",1],
-        ["Aluno32a3",1],
-        ["Aluno33a3",3],
-        ["Aluno34a3",4],
-        ["Aluno35a3",5],
-        ],
-        turmaB = [ //1
-        ["Aluno36b1",2],  
-        ["Aluno37b1",1],  
-        ["Aluno38b1",4],    
-        ["Aluno39b1",5],  
-        ["Aluno40b1",4],
+    while (y < escola[0].length) { // Lendo As turmas
+        while (x < escola[0][0].length) { // Lendo os alunos
+            console.log(escola[0][y][x][0])
+            x++
+        }
+        console.log(y)
+        y < escola[0].length ? x = 0 : null // Se o Y for menor que o numero de turmas, X vai valer 0
+        y++
+    }
+// Sistema começa, lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping), PARA
+// Y < que as turmas, Transforma o x em 0 e y++
+// lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping) da segunda turma, PARAa
+// Y < que as turmas, Transforma o x em 0  e y++
+// lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping) da terceira turma, PARAa
+// Y < que as turmas, Transforma o x em 0  e y++
+// y sendo 3, sai Do looping, nao entrando no y e consequentemente, X
+//x == alunos PARA
+//y == turma PARA
 
-        ],
-        turmaC = [  //2
-        ["Aluno41c3",1],
-        ["Aluno42c3",4],
-        ["Aluno43c3",2],
-        ["Aluno44c3",4],
-        ["Aluno45c3",5],
-        ]
 
-    ],
 
-]
 
-    console.log(primeiroAno[1][0][1])
-    // Turma b, entrei... aluno 6, entrei.... nota 2 
-    
-    
+
+
+
+
+
+
+    //         ],
+    //         turmaB = [  //1
+    //             ["Aluno6b1", 2],
+    //             ["Aluno7b1", 1],
+    //             ["Aluno8b1", 1],
+    //             ["Aluno9b1", 4],
+    //             ["Aluno10b1", 2],
+
+    //         ],
+    //         turmaC = [  //2
+    //             ["Aluno11c1", 3],
+    //             ["Aluno12c1", 4],
+    //             ["Aluno13c1", 4],
+    //             ["Aluno14c1", 4],
+    //             ["Aluno15c1", 1],
+    //         ]
+
+    //     ],
+    //     segundoAno = [ //01
+    //         turmaA = [  //0
+    //             ["Aluno16a2", 1],
+    //             ["Aluno17a2", 1],
+    //             ["Aluno18a2", 3],
+    //             ["Aluno19a2", 2],
+    //             ["Aluno20a2", 1],
+    //         ],
+    //         turmaB = [  //1
+    //             ["Aluno21b1", 2],
+    //             ["Aluno22b1", 1],
+    //             ["Aluno23b1", 1],
+    //             ["Aluno24b1", 3],
+    //             ["Aluno25b1", 2],
+
+    //         ],
+    //         turmaC = [  //2
+    //             ["Aluno26c2", 1],
+    //             ["Aluno27c2", 1],
+    //             ["Aluno28c2", 2],
+    //             ["Aluno29c2", 1],
+    //             ["Aluno30c2", 3],
+    //         ]
+
+    //     ],
+
+    //     terceiroAno = [ //02
+    //         turmaA = [  //0
+    //             ["Aluno31a3", 1],
+    //             ["Aluno32a3", 1],
+    //             ["Aluno33a3", 3],
+    //             ["Aluno34a3", 4],
+    //             ["Aluno35a3", 5],
+    //         ],
+    //         turmaB = [ //1
+    //             ["Aluno36b1", 2],
+    //             ["Aluno37b1", 1],
+    //             ["Aluno38b1", 4],
+    //             ["Aluno39b1", 5],
+    //             ["Aluno40b1", 4],
+
+    //         ],
+    //         turmaC = [  //2
+    //             ["Aluno41c3", 1],
+    //             ["Aluno42c3", 4],
+    //             ["Aluno43c3", 2],
+    //             ["Aluno44c3", 4],
+    //             ["Aluno45c3", 5],
+    //         ]
+
+    //     ],
+
+    //     ]
+    // console.log(primeiroAno[1][0][1])
+    // // Turma b, entrei... aluno 6, entrei.... nota 2
+
+
+
 </script>
 
 </html>
