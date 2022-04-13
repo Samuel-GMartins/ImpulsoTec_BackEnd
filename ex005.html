@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>DESAFIO 3 - Ex004 -</title>
+    <title>DESAFIO 1 - Ex005 -</title>
     <meta charset="utf-08">
     <style>
         * {
@@ -59,44 +59,29 @@
 </head>
 
 <body>
-    <h1>Desafio 3 - Ex 004</h1>
+    <h1>Desafio 1 - Ex 005</h1>
     <h3> <i>Observe o Console do Navegador</i></h3>
     <input type="button" value="Atualizar" onclick="window.location.reload()">
-    <p> b
+    <p> Function <br>
+        <br>
+        &bull; Crie uma funçao chamada bemVindo com dois parâmetros: nome e msg <br>
+        &bull; Crie um Array com 4 posições que descrevem nomes e mensagens diferentes <br>
+        &bull; Crie um While que consome o array utilizando a funçao criada para exibir 4 mensagens com os diferentes
+        Textos
     </p>
 </body>
 <script>
-   var escola
 
- escola =
- [  primeiroAno = [ 
-        ["a","Aluno1a1",5],
-        ["a","Aluno2a1",1],
-        ["a","Aluno3a1",3], 
-        ["a","Aluno4a1",4],
-        ["a","Aluno5a1",1],
-        ["b","Aluno6b1",2],  
-        ["b","Aluno7b1",1],  
-        ["b","Aluno8b1",1],    
-        ["b","Aluno9b1",4],  
-        ["b","Aluno10b1",2],
-        ["c","Aluno11c1",3],
-        ["c","Aluno12c1",4],
-        ["c","Aluno13c1",4],
-        ["c","Aluno14c1",4],
-        ["c","Aluno15c1",1],
-        ]
-]
+var nomeMensagem = [["Roberta", "Macarrão"], ["Monica", "Lasanha"], ["Pedro", "Abacaxi"], ["Pacoal", "Sushi"]]
 
-console.log(escola[0][0][0][0] + " , " + escola[0][0][1] + " , " + escola[0][0])
-    // Turma b, entrei... aluno 6, entrei.... nota 2    
-var n
-n=0     
-    while(n < escola.length){
-       console.log(escola[0][n])
-    } n++
-
-
+    function bemVindo(nome, msg) {
+        console.log("Olá " + nome + ", Sua Comida Predileta Registrada foi: " + msg)
+    }
+    var n = 0
+    while (n < 4) {
+        bemVindo(nomeMensagem[n][0], nomeMensagem[n][1])
+        n++
+    }
 
 </script>
 
