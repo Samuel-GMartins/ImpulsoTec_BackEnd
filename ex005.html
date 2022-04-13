@@ -71,14 +71,17 @@
     </p>
 </body>
 <script>
+// [x] Executar a função dentro do while com parametros fixos  ↧
+// [x] Executar a função dentro do while usando uma linha array com parâmetro ↧
+// [x] Executar a função dentro do while aplicando a variável de iteração
 
-var nomeMensagem = [["Roberta", "Macarrão"], ["Monica", "Lasanha"], ["Pedro", "Abacaxi"], ["Pacoal", "Sushi"]]
+    var nomeMensagem = [["Roberta", "Macarrão"], ["Monica", "Lasanha"], ["Pedro", "Abacaxi"], ["Pacoal", "Sushi"]]
 
     function bemVindo(nome, msg) {
         console.log("Olá " + nome + ", Sua Comida Predileta Registrada foi: " + msg)
     }
     var n = 0
-    while (n < 4) {
+    while (n < nomeMensagem.length) {
         bemVindo(nomeMensagem[n][0], nomeMensagem[n][1])
         n++
     }

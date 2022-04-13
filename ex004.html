@@ -80,17 +80,11 @@
 <script>
 
     var escola = [
-        [//         0-------------1----------------2------------3----------4        //Primeira Série
-            //     0------1       0------1       0-------1      0----1      0----1     
-            [["Alan", 3], ["Debora", 2], ["Jailson", 5], ["Ane", 4], ["Joe", 3]],  // 0  Turma 1A   
-
-            //     0------------1-------------2--------------3--------------4 
-            //   0-----1       0-----1      0------1      0-------1      0----1     
-            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5]],  // 1  Turma 1B   
-
-            //     0------------1----------------2-------------3------------4       
-            //    0----1        0-----1        0-----1      0----1      0----1     
-            [["Silas", 5], ["Dráusio", 5], ["Beatriz", 4], ["Ire", 4], ["Tania", 3]]  // 2  Turma 1C   
+        [//       0-------------1----------------2------------3----------4        //Primeira Série
+            //  0-----1       0------1      0-------1      0----1      0----1     
+            [["Alan", 3], ["Debora", 2], ["Jailson", 5], ["Ane", 4], ["Joe", 3]],       // 0  Turma 1A     
+            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5], ["Geraldo", 5]],  // 1  Turma 1B     
+            [["Silas", 5], ["Dráusio", 5], ["Beatriz", 4], ["Ire", 4], ["Tania", 3]]    // 2  Turma 1C   
         ]
     ]
 
@@ -98,20 +92,50 @@
     // [Primeiro Colchete(Primeira Série)] [Segundo Colchete(Turma A)] [Informações do Aluno] [Nota do Aluno]
     // console.log(escola[0][2][1][1]) // Serie,TURMAS, Aluno, Nota
 
-    console.log(escola[0][1][2][0])
-    console.log(escola[0][1][2][1])
-    console.log("+++++++-------+++++++")
+    // console.log(escola[0][1][2][0])
+    // console.log(escola[0][1][2][1])
+    // console.log("+++++++-------+++++++")
 
     var x = 0
     var y = 0
+    var qtdAprovados = 0
+    var acumulaNota = 0
+
+    // FUNÇÃO QUANTIDADE DE APROVADOS
+    function aprovados(num, nomeAluno) {
+        if (num >= 3) {
+            console.log(nomeAluno, num)
+            qtdAprovados++
+        }
+    }
+
+    //FUNÇÃO PORCENTAGEM
+    function porcentagem(n, total) {
+        return n / total * 100
+
+    }
+
+    // FUNÇÃO MEDIA
+    function media(n,total){
+        return n / total
+    }
 
     while (y < escola[0].length) { // Lendo As turmas
-        while (x < escola[0][0].length) { // Lendo os alunos
-            console.log(escola[0][y][x][0])
+        while (x < escola[0][y].length) { // Lendo os alunos
+            // console.log(escola[0][y][x][0]) // Nome de todos os ALunos
+            aprovados(escola[0][y][x][1], escola[0][y][x][0]) // Somente dos Aprovados(Nome e nota)
+            acumulaNota = acumulaNota + escola[0][y][x][1]
             x++
         }
-        console.log(y)
+        console.log("Média de Notas: " + media(acumulaNota,escola[0][y].length))
+        console.log(qtdAprovados + "/" + escola[0][y].length + " Aprovados")
+        console.log(porcentagem(qtdAprovados, escola[0][y].length) + " %")
+        console.log("------------")
+
         y < escola[0].length ? x = 0 : null // Se o Y for menor que o numero de turmas, X vai valer 0
+        y < escola[0].length ? qtdAprovados = 0 : null
+        y < escola[0].length ? acumulaNota = 0 : null
+
         y++
     }
 // Sistema começa, lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping), PARA
@@ -123,26 +147,6 @@
 // y sendo 3, sai Do looping, nao entrando no y e consequentemente, X
 //x == alunos PARA
 //y == turma PARA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </script>
