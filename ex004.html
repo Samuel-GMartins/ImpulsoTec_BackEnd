@@ -80,25 +80,23 @@
 <script>
     var turmas = ["A", "B", "C"]
     var escola = [
-        [//       0-------------1----------------2------------3----------4                                      // Primeira Série
-            //  0-----1       0------1      0-------1      0----1      0----1     
+        [//       0-------------1----------------2------------3----------4-------------------5
+            //  0-----1       0------1      0-------1      0----1      0----1               0-----1
             [["Alan", 3], ["Debora", 2], ["Jailson", 5], ["Ane", 4], ["Joe", 3]],                               // 0  Turma 1A     
-            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5], ["Geraldo", 5]],          // 1  Turma 1B    // 0 
+            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5], ["Geraldo", 5]],          // 1  Turma 1B    // 0  PRIMEIRO ANO
             [["Silas", 5], ["Dráusio", 5], ["Beatriz", 4], ["Ire", 4], ["Tania", 3]]                            // 2  Turma 1C   
         ],
-        [                                                                                                       // Segunda Série    
+        [
             [["AlanX", 3], ["DeboraX", 2], ["JailsonX", 5], ["AneX", 4], ["JoeX", 3]],                          // 0  Turma 2A     
-            [["PedroX", 2], ["FlavioX", 4], ["GersonX", 2], ["MirandaX", 1], ["JaneX", 5], ["GeraldoX", 5]],    // 1  Turma 2B    // 1  
+            [["PedroX", 2], ["FlavioX", 4], ["GersonX", 2], ["MirandaX", 1], ["JaneX", 5], ["GeraldoX", 5]],    // 1  Turma 2B    // 1  SEGUNDO ANO
             [["SilasX", 5], ["DráusioX", 5], ["BeatrizX", 4], ["IreX", 4], ["TaniaX", 3]]                       // 2  Turma 2C   
         ],
-    ]
-
-    // escola [0] Série,     escola [0][0] turma       escola [0][0][0] Aluno      escola [0][0][0][0] Nota Aluno
-    // [Primeiro Colchete(Primeira Série)] [Segundo Colchete(Turma A)] [Informações do Aluno] [Nota do Aluno]
-    // console.log(escola[0][2][1][1]) // Serie,TURMAS, Aluno, Nota
-
-    // console.log(escola[0][1][2][0])
-    // console.log(escola[0][1][2][1])
+        [
+            [["AlanY", 3], ["DeboraY", 2], ["JailsonY", 5], ["AneY", 4], ["JoeY", 3]],                          // 0  Turma 3A     
+            [["PedroY", 2], ["FlavioY", 4], ["GersonY", 2], ["MirandaY", 1], ["JaneY", 5], ["GeraldoY", 5]],    // 1  Turma 3B    // 2  TERCEIRO ANO
+            [["SilasY", 5], ["DráusioY", 5], ["BeatrizY", 4], ["IreY", 4], ["TaniaY", 3]]                       // 2  Turma 3C   
+        ]
+    ]   // escola[0] -> Série,     escola[0][0] -> turma       escola[0][0][0] -> Aluno      escola [0][0][0][0] -> Nota Aluno
 
     var x = 0
     var y = 0
@@ -132,13 +130,10 @@
 
         while (y < escola[serie].length) {          // Lendo As turmas
             console.log("Turma: " + turmas[y])      // Mostra qual é a turma
-            // Recupera nomes e notas dos alunos
-            // Lista apenas os alunos aprovados
-            // Acumula a soma das notas dos aprovados
             while (x < escola[serie][y].length) {
                 escola[serie][y].sort((a, b) => a[1] - b[1])                 // Reordena o array com as notas em ordem crescente
-                aprovados(escola[serie][y][x][1], escola[serie][y][x][0])   // Brtifica os alunos aprovados
-                acumulaNota = acumulaNota + escola[serie][y][x][1]          // Acumula total para calcular a média
+                aprovados(escola[serie][y][x][1], escola[serie][y][x][0])    // Brtifica os alunos aprovados
+                acumulaNota = acumulaNota + escola[serie][y][x][1]           // Acumula total para calcular a média
                 x++
             }
             console.log("Aprovados Crescente: " + notas.sort((a, b) => a - b))
@@ -170,8 +165,11 @@
     // Inicia o Sistema
     admEscola(0, "1° Série")
     y = 0
-    // console.log("------ TROCA DE SÉRIES ------")
-    // admEscola(1, "2° Série")
+    console.log("------ TROCA DE SÉRIES ------")
+    admEscola(1, "2° Série")
+    y = 0
+    console.log("------ TROCA DE SÉRIES ------")
+    admEscola(2, "3° Série")
 </script>
 
 </html>
