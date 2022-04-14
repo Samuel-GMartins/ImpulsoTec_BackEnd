@@ -72,29 +72,52 @@
     console.log("+++++++-------+++++++")
 
     // Funções com Retorno
-    function soma(){
-        return 10+2
+    function soma() {
+        return 10 + 2
     }
     var res = soma()
     console.log(res)
 
     console.log("+++++++-------+++++++")
 
-   //FUNÇÕES COM PARâMETROS
-    function calculo(a,b){
+    //FUNÇÕES COM PARâMETROS
+    function calculo(a, b) {
         return a * b
     }
-    var res2 = calculo(4,5)
-    var res3 = calculo(12,4)
-    console.log(res2,res3)
+    var res2 = calculo(4, 5)
+    var res3 = calculo(12, 4)
+    console.log(res2, res3)
 
     console.log("+++++++-------+++++++")
 
-    function bemVindo(nome,msg){
-        console.log("Olá" + nome + ", Hoje é "+ msg)
+    function bemVindo(nome, msg) {
+        console.log("Olá" + nome + ", Hoje é " + msg)
     }
     bemVindo(" Vladmir", "Dia das Crianças") // Sem RETURN, Nao precisa de vAr. // Chama a function direto e da os parâmetros
     bemVindo(" Ana Maria", "Carnaval") // Sem RETURN, Nao precisa de vAr. // Chama a function direto e da os parâmetros
+
+    console.log("+++++++-------+++++++")
+
+
+    // Iterador que age semelhante ao while
+    // for 
+
+    var numeros = [2, 25, 900, 12, 34]
+    for (var n = 0; n < numeros.length; n++) { // n recebe 0 ; enquanto n < que quantidade de numeros ; n soma +1
+        console.log(numeros[n])
+    }
+
+    // DO MENOR PARA O MAIOR Numericamente
+    console.log("Exibindo os números em ordem Crescente")
+    var crescente = numeros.sort((a, b) => a - b) //sort == Ordenar
+    console.log(crescente)
+
+    // DO MAIOR PARA O MENOR Numericamente
+    console.log("Exibindo os números em ordem Decrescente")
+    var decrescente = numeros.sort((a, b) => b - a) //sort == Ordenar
+    console.log(decrescente)
+
+
 
 
 </script>

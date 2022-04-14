@@ -80,17 +80,16 @@
 <script>
     var turmas = ["A", "B", "C"]
     var escola = [
-        [//       0-------------1----------------2------------3----------4                              // Primeira Série
+        [//       0-------------1----------------2------------3----------4                                      // Primeira Série
             //  0-----1       0------1      0-------1      0----1      0----1     
-            [["Alan", 3], ["Debora", 2], ["Jailson", 5], ["Ane", 4], ["Joe", 3]],                       // 0  Turma 1A     
-            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5], ["Geraldo", 5]],  // 1  Turma 1B     
-            [["Silas", 5], ["Dráusio", 5], ["Beatriz", 4], ["Ire", 4], ["Tania", 3]]                    // 2  Turma 1C   
+            [["Alan", 3], ["Debora", 2], ["Jailson", 5], ["Ane", 4], ["Joe", 3]],                               // 0  Turma 1A     
+            [["Pedro", 2], ["Flavio", 4], ["Gerson", 2], ["Miranda", 1], ["Jane", 5], ["Geraldo", 5]],          // 1  Turma 1B    // 0 
+            [["Silas", 5], ["Dráusio", 5], ["Beatriz", 4], ["Ire", 4], ["Tania", 3]]                            // 2  Turma 1C   
         ],
-        [//       0-------------1----------------2------------3----------4                              // Segunda Série
-            //  0-----1       0------1      0-------1      0----1      0----1     
-            [["AlanX", 3], ["DeboraX", 2], ["JailsonX", 5], ["AneX", 4], ["JoeX", 3]],                       // 0  Turma 2A     
-            [["PedroX", 2], ["FlavioX", 4], ["GersonX", 2], ["MirandaX", 1], ["JaneX", 5], ["GeraldoX", 5]],  // 1  Turma 2B     
-            [["SilasX", 5], ["DráusioX", 5], ["BeatrizX", 4], ["IreX", 4], ["TaniaX", 3]]                    // 2  Turma 2C   
+        [                                                                                                       // Segunda Série    
+            [["AlanX", 3], ["DeboraX", 2], ["JailsonX", 5], ["AneX", 4], ["JoeX", 3]],                          // 0  Turma 2A     
+            [["PedroX", 2], ["FlavioX", 4], ["GersonX", 2], ["MirandaX", 1], ["JaneX", 5], ["GeraldoX", 5]],    // 1  Turma 2B    // 1  
+            [["SilasX", 5], ["DráusioX", 5], ["BeatrizX", 4], ["IreX", 4], ["TaniaX", 3]]                       // 2  Turma 2C   
         ],
     ]
 
@@ -100,16 +99,17 @@
 
     // console.log(escola[0][1][2][0])
     // console.log(escola[0][1][2][1])
-    // console.log("+++++++-------+++++++")
 
     var x = 0
     var y = 0
     var qtdAprovados = 0
     var acumulaNota = 0
+    var notas = []
 
     // FUNÇÃO QUANTIDADE DE APROVADOS
     function aprovados(num, nomeAluno) {
         if (num >= 3) {
+            notas.push(num)
             console.log(nomeAluno, num)
             qtdAprovados++
         }
@@ -127,56 +127,50 @@
     }
 
     // FUNCÇÃO AdmESCOLA
-    function admEscola() {
+    function admEscola(serie, desc) {
+        console.log(desc)
 
-        while (y < escola[0].length) { // Lendo As turmas
+        while (y < escola[serie].length) { // Lendo As turmas
             console.log("Turma: " + turmas[y]) // Mostra qual é a turma
             // Recupera nomes e notas dos alunos
             // Lista apenas os alunos aprovados
             // Acumula a soma das notas dos aprovados
-            while (x < escola[0][y].length) {
-                aprovados(escola[0][y][x][1], escola[0][y][x][0])
-                acumulaNota = acumulaNota + escola[0][y][x][1]
+            while (x < escola[serie][y].length) {
+                aprovados(escola[serie][y][x][1], escola[serie][y][x][0])
+                acumulaNota = acumulaNota + escola[serie][y][x][1]
                 x++
             }
-            console.log("Média de Notas: " + media(acumulaNota, escola[0][y].length))
-            console.log(qtdAprovados + "/" + escola[0][y].length + " Aprovados")
-            console.log(porcentagem(qtdAprovados, escola[0][y].length) + " %")
+            console.log("Aprovados Crescente: " + notas.sort((a,b) => a - b))
+            console.log("Média de Notas: " + media(acumulaNota, escola[serie][y].length))
+            console.log(qtdAprovados + "/" + escola[serie][y].length + " Aprovados")
+            console.log(porcentagem(qtdAprovados, escola[serie][y].length) + " %")
             console.log("------------")
 
-            y < escola[0].length ? x = 0 : null // Se o Y for menor que o numero de turmas, X vai valer 0
-            y < escola[0].length ? qtdAprovados = 0 : null
-            y < escola[0].length ? acumulaNota = 0 : null
+            y < escola[serie].length ? x = 0 : null // Se o Y for menor que o numero de turmas, X vai valer 0
+            y < escola[serie].length ? qtdAprovados = 0 : null
+            y < escola[serie].length ? acumulaNota = 0 : null
+            y < escola[serie].length ? notas = [] : null
 
             y++
+
+            // Sistema começa, lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping), PARA
+            // Y < que as turmas, Transforma o x em 0 e y++
+            // lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping) da segunda turma, PARAa
+            // Y < que as turmas, Transforma o x em 0  e y++
+            // lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping) da terceira turma, PARAa
+            // Y < que as turmas, Transforma o x em 0  e y++
+            // y sendo 3, sai Do looping, nao entrando no y e consequentemente, X
+            //x == alunos PARA
+            //y == turma PARA
         }
     }
+
+
     // Inicia o Sistema
-    admEscola()
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Sistema começa, lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping), PARA
-// Y < que as turmas, Transforma o x em 0 e y++
-// lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping) da segunda turma, PARAa
-// Y < que as turmas, Transforma o x em 0  e y++
-// lê o 1° while,passa pro 2° while e imprime os 5 nomes(looping) da terceira turma, PARAa
-// Y < que as turmas, Transforma o x em 0  e y++
-// y sendo 3, sai Do looping, nao entrando no y e consequentemente, X
-//x == alunos PARA
-//y == turma PARA
-
-
+    admEscola(0, "1° Série")
+    y = 0
+    // console.log("------ TROCA DE SÉRIES ------")
+    // admEscola(1, "2° Série")
 </script>
 
 </html>
