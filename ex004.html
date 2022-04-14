@@ -123,30 +123,31 @@
 
     // FUNÇÃO MEDIA
     function media(n, total) {
-        return (n / total).toFixed(2) // .toFixed(2) -> Mostra duas casas decimais no resultado
+        return (n / total).toFixed(2)           // .toFixed(2) -> Mostra duas casas decimais no resultado
     }
 
     // FUNCÇÃO AdmESCOLA
     function admEscola(serie, desc) {
         console.log(desc)
 
-        while (y < escola[serie].length) { // Lendo As turmas
-            console.log("Turma: " + turmas[y]) // Mostra qual é a turma
+        while (y < escola[serie].length) {          // Lendo As turmas
+            console.log("Turma: " + turmas[y])      // Mostra qual é a turma
             // Recupera nomes e notas dos alunos
             // Lista apenas os alunos aprovados
             // Acumula a soma das notas dos aprovados
             while (x < escola[serie][y].length) {
-                aprovados(escola[serie][y][x][1], escola[serie][y][x][0])
-                acumulaNota = acumulaNota + escola[serie][y][x][1]
+                escola[serie][y].sort((a, b) => a[1] - b[1])                 // Reordena o array com as notas em ordem crescente
+                aprovados(escola[serie][y][x][1], escola[serie][y][x][0])   // Brtifica os alunos aprovados
+                acumulaNota = acumulaNota + escola[serie][y][x][1]          // Acumula total para calcular a média
                 x++
             }
-            console.log("Aprovados Crescente: " + notas.sort((a,b) => a - b))
+            console.log("Aprovados Crescente: " + notas.sort((a, b) => a - b))
             console.log("Média de Notas: " + media(acumulaNota, escola[serie][y].length))
             console.log(qtdAprovados + "/" + escola[serie][y].length + " Aprovados")
             console.log(porcentagem(qtdAprovados, escola[serie][y].length) + " %")
             console.log("------------")
 
-            y < escola[serie].length ? x = 0 : null // Se o Y for menor que o numero de turmas, X vai valer 0
+            y < escola[serie].length ? x = 0 : null             // Se o Y for menor que o numero de turmas, X vai valer 0
             y < escola[serie].length ? qtdAprovados = 0 : null
             y < escola[serie].length ? acumulaNota = 0 : null
             y < escola[serie].length ? notas = [] : null
