@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replica ex004</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+            size: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            margin-right: 110px;
+            margin-left: 110px;
+            margin-bottom: 500px;
+
+        }
+
+        h1,
+        h3 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        p {
+            padding: 50px;
+            background-color: #b8235a05;
+            border-radius: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.724);
+            font-size: 15pt;
+            text-align: justify;
+            filter: blur(1px);
+        }
+
+        p:hover {
+            background-color: #df4c82;
+            filter: none;
+            color: white;
+
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding-inline: 70px;
+            border-radius: 15px;
+            font-size: 15pt;
+            border: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.516);
+        }
+
+        input:hover {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.475);
+            background-color: rgb(182, 182, 182);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>RÉPLICA DO Desafio 3 - Ex 004</h1>
+    <h3> <i>Observe o Console do Navegador</i></h3>
+    <input type="button" value="Atualizar" onclick="window.location.reload()">
+    <p> Sistema Escolar <br>
+        <br>
+        &bull; Uma escola recebe alunos para as séries do 1°,2° e 3° ano <br>
+        &bull; Cada série é composta das turmas A, B, e C. <br>
+        &bull; As notas dos alunos são expressas em números de 1 a 5 <br>
+        &bull; A regra é que a nota 1 é o pior resultado <br>
+        &bull; Para ter aprovação o aluno deve ter uma nota de 3 ou mais <br>
+        <br>
+        com base nessas informações, crie um código que fornece: <br>
+        <br>
+        &bull; porcentagem de alunos aprovados por turma, classificado por série <br>
+        &bull; Média das notas desses alunos por turma, classificado por série <br>
+        &bull; Os melhores alunos e suas respectivas notas de cada serie em ordem crescente (por nota) <br>
+    </p>
+
+</body>
+<script>
+    var escola = [
+        [[["Joao", 3], ["Pedro", 1], ["Bruno", 5], ["Jessica", 4], ["Sofia", 2]],
+        [["Juca", 1], ["Juliano", 2], ["Bernardo", 3], ["Pereira", 5], ["Lola", 5]],
+        [["Pascoal", 2], ["Maria", 2], ["Rita", 4], ["Vanda", 4], ["Jacinto", 3]]],
+
+        // [[["Alberto", 2], ["Messias", 5], ["Marcos", 5], ["Lucas", 4], ["Joao", 3]],
+        // [["Samael", 2], ["Zeus", 2], ["Afrodite", 3], ["Thor", 1], ["Lala", 4]],
+        // [["Sun", 2], ["Pedinha", 2], ["Cecilia", 4], ["Violeta", 4], ["Oniqua", 5]]],
+
+        // [[["AlbertoX", 2], ["MessiasX", 5], ["MarcosX", 5], ["LucasX", 4], ["JoaoX", 3]],
+        // [["SamaelX", 2], ["ZeusX", 2], ["AfroditeX", 3], ["ThorX", 1], ["LalaX", 4]],
+        // [["SunX", 2], ["PedinhaX", 2], ["CeciliaX", 4], ["VioletaX", 4], ["OniquaX", 5]]]
+    ]
+    console.log(escola)
+
+var x = 0
+var y = 0
+
+while (y < 3){
+    console.log(escola[y])
+while (x < 5){
+    console.log(escola[0][0][x])
+    x++
+}
+
+y++
+}
+</script>
+
+</html>
