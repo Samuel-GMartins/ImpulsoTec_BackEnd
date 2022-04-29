@@ -10,15 +10,16 @@
         }
 
         body {
-            background-color: rgba(139, 244, 244, 0.4);
+            background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
             size: 500px;
             padding: 50px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
 
-        h1 {
+        h1,h3 {
             margin-bottom: 10px;
+            color: white;
         }
 
         p {
@@ -27,10 +28,13 @@
             border-radius: 20px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.724);
             font-size: 20pt;
+            filter: blur(1px);
+
         }
 
         p:hover {
             background-color: rgb(237, 236, 236);
+            filter: none;
         }
 
         input {
